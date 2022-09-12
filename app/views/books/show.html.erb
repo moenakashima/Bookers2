@@ -1,2 +1,18 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <%= render 'user_info', user: @user %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table table-hover table-inverse">
+         <tbody>
+            <tr>
+              <td><a href="/users/<% user_id %>"><%= image_tag @book.user.get_profile_image(100,100) %>
+              <br><%= @book.user.name %></a></td>
+              <td><%= @book.title %></td>
+              <td><%= @book.opinion %></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>  
