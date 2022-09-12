@@ -1,7 +1,25 @@
-<div class="container">
+<div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
+        <% if books.user.image.attached? %>
+        <%= image_tag books.user.image, size: "200x200" %>
+        <% else %>
+        <%= image_tag 'default-image', size: "200x200" %>
+        <% end %>
+      <table class="table">
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>name</th>
+            <th><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= text.field introduction %></th>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
