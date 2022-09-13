@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
-  
+
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/default-image.jpg')

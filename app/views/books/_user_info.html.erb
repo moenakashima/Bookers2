@@ -25,17 +25,17 @@
   </div>
   <div class="row">
     <h2 class="mt-3">New Book</h2>
-    <%= form_with model: @book , url: books_path, method: :post do |book| %>
+    <%= form_with model: book , url: books_path, method: :post do |book| %>
     <div class="form-group">
       <label class="book_title">Title</label>
-      <%= book.text_field :title %>
+      <%= book.text_field :title, class: "form-control book_title" %>
     </div>
     <div class="form-group">
       <label class="book_opinion">Opinion</label>
-      <%= book.text_area :opinion %>
+      <%= book.text_area :opinion, class: "form-control book_body" %>
     </div>
     <div class="form-group">
-      <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+      <%= book.submit "Create Book", class: "btn btn-success" %>
     </div>
     <% end %>
   </div>
